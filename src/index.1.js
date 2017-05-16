@@ -1,30 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
+import { Router, Route, Link } from 'react-router';
 import './index.css';
-
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Login from './login/index.js'
-import BookList from './bookList/index.js'
-// import BasicExample from './BasicExample.js'
 
 const App = () => (
-    <Router>
-      <div>
-        <Route exact path="/" component={Login}/>
-        <Route exact path="/bookList" component={BookList}/>
-      </div>
-  </Router>
+  <MuiThemeProvider>
+    <Login />
+  </MuiThemeProvider>
 );
  
 ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
+
+
