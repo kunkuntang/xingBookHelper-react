@@ -6,6 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from '../common/appBar.js'
 import BookListCard from './listCard.js'
 import Drawer from '../common/drawer.js'
+import FloatingActBtn from '../common/floatingActionButton.js'
 
 let bookListData = [
   {
@@ -40,6 +41,7 @@ class bookList extends Component {
         <MuiThemeProvider><Drawer isOpen={this.state.open} handleToggle={ isOpen => this.drawerToggle(isOpen)} /></MuiThemeProvider>
         <MuiThemeProvider><AppBar handleToggle={ isOpen => this.drawerToggle(isOpen)} /></MuiThemeProvider>
         {bookListNodes}
+        <MuiThemeProvider><FloatingActBtn /></MuiThemeProvider>
       </div>
     )
   }
