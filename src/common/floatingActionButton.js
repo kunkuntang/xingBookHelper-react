@@ -1,9 +1,14 @@
 import React from 'react'
+import {
+  Link
+} from 'react-router-dom'
+
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
 const style = {
-  marginRight: 20,
+  marginBottom: '1.5rem',
+  marginRight: '1.5rem'
 };
 
 class FloatingActionBtn extends React.Component {
@@ -14,10 +19,12 @@ class FloatingActionBtn extends React.Component {
   
   render() {
     return (
-      <div>
-        <FloatingActionButton style={style}>
-          <ContentAdd />
-        </FloatingActionButton>
+      <div style={{float: 'right'}}>
+        <Link to="/addBookList">
+          <FloatingActionButton style={style}>
+            <ContentAdd />
+          </FloatingActionButton>
+        </Link>
       </div>
     )  
   }

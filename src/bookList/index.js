@@ -8,6 +8,8 @@ import BookListCard from './listCard.js'
 import Drawer from '../common/drawer.js'
 import FloatingActBtn from '../common/floatingActionButton.js'
 
+import './index.css'
+
 let bookListData = [
   {
     listName: 'list1',
@@ -16,6 +18,30 @@ let bookListData = [
   {
     listName: 'list2',
     desc: 'list2 desc'
+  },
+  {
+    listName: 'list3',
+    desc: 'list3 desc'
+  },
+  {
+    listName: 'list3',
+    desc: 'list3 desc'
+  },
+  {
+    listName: 'list3',
+    desc: 'list3 desc'
+  },
+  {
+    listName: 'list3',
+    desc: 'list3 desc'
+  },
+  {
+    listName: 'list3',
+    desc: 'list3 desc'
+  },
+  {
+    listName: 'list3',
+    desc: 'list3 desc'
   },
   {
     listName: 'list3',
@@ -37,11 +63,13 @@ class bookList extends Component {
       bookListNodes.push(<MuiThemeProvider key={i}><BookListCard data={bookListData[i]} /></MuiThemeProvider>)
     }
     return (
-      <div>
+      <div className="bookListContent">
         <MuiThemeProvider><Drawer isOpen={this.state.open} handleToggle={ isOpen => this.drawerToggle(isOpen)} /></MuiThemeProvider>
         <MuiThemeProvider><AppBar handleToggle={ isOpen => this.drawerToggle(isOpen)} /></MuiThemeProvider>
         {bookListNodes}
-        <MuiThemeProvider><FloatingActBtn /></MuiThemeProvider>
+        <div className="toolsBarCon">
+          <MuiThemeProvider><FloatingActBtn /></MuiThemeProvider>
+        </div>
       </div>
     )
   }

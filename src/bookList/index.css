@@ -1,0 +1,8 @@
+.bookListContent {
+    padding-top: 65px;
+}
+.toolsBarCon {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

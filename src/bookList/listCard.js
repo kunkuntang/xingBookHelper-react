@@ -4,7 +4,7 @@ import {Card, CardHeader} from 'material-ui/Card';
 import './listCard.css'
 
 const BookListCard = (props) => (
-  <Card>
+  <Card className="card-con">
     <CardHeader
       title={props.data.listName}
       subtitle={props.data.desc}
