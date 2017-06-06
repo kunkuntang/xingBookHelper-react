@@ -52,20 +52,20 @@ let bookListData = [
 class bookList extends Component {
   constructor(props) {
     super(props);
-    this.state = {open: false};
+    this.state = { open: false };
   }
 
-  drawerToggle = () => this.setState({open: !this.state.open});
+  drawerToggle = () => this.setState({ open: !this.state.open });
 
-  render () {
+  render() {
     var bookListNodes = [];
-    for(let i = 0; i < bookListData.length; i++) {
+    for (let i = 0; i < bookListData.length; i++) {
       bookListNodes.push(<MuiThemeProvider key={i}><BookListCard data={bookListData[i]} /></MuiThemeProvider>)
     }
     return (
       <div className="bookListContent">
-        <MuiThemeProvider><Drawer isOpen={this.state.open} handleToggle={ isOpen => this.drawerToggle(isOpen)} /></MuiThemeProvider>
-        <MuiThemeProvider><AppBar handleToggle={ isOpen => this.drawerToggle(isOpen)} /></MuiThemeProvider>
+        <MuiThemeProvider><Drawer isOpen={this.state.open} handleToggle={isOpen => this.drawerToggle(isOpen)} /></MuiThemeProvider>
+        <MuiThemeProvider><AppBar handleToggle={isOpen => this.drawerToggle(isOpen)} /></MuiThemeProvider>
         {bookListNodes}
         <div className="toolsBarCon">
           <MuiThemeProvider><FloatingActBtn /></MuiThemeProvider>
