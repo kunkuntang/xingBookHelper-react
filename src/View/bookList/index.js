@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import AppBar from '../common/appBar.js'
+import AppBar from '../../components/appBar.js'
 import BookListCard from './listCard.js'
-import Drawer from '../common/drawer.js'
-import FloatingActBtn from '../common/floatingActionButton.js'
+import Drawer from '../../components/drawer.js'
+import FloatingActBtn from '../../components/floatingActionButton.js'
 
 import './index.css'
 

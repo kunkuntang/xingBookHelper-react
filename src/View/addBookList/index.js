@@ -4,8 +4,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
-import AppBar from './appBar.js'
-import Drawer from '../common/drawer.js'
+import AppBar from '../../components/appBar.js'
+import Drawer from '../../components/drawer.js'
 
 import {
   Link

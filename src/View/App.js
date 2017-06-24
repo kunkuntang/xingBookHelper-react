@@ -37,49 +37,20 @@ class App extends Component {
 
   render() {
     return (
+      <div>
+        <Login test="name"/>
+        up is login out of router
       <Router>
         <div>
-          <Route exact path="/" component={Login} bookList={this.state.bookList} setBookList={this.setBookList} />
+          <Route exact path="/" component={Login} test="name2" bookList={this.state.bookList} setBookList={this.setBookList} />
           <Route exact path="/bookList" component={BookList} />
           <Route exact path="/addBookList" component={AddBookList} bookList={this.state.bookList} />
           {this.bookList}
         </div>
       </Router>
+      </div>
     );
   }
 }
 
-// App.propTypes = {
-//   visibleTodos: PropTypes.arrayOf(PropTypes.shape({
-//     text: PropTypes.string.isRequired,
-//     completed: PropTypes.bool.isRequired
-//   }).isRequired).isRequired,
-//   visibilityFilter: PropTypes.oneOf([
-//     'SHOW_ALL',
-//     'SHOW_COMPLETED',
-//     'SHOW_ACTIVE'
-//   ]).isRequired
-// }
-
-// function selectTodos(todos, filter) {
-//   switch (filter) {
-//     case VisibilityFilters.SHOW_ALL:
-//       return todos
-//     case VisibilityFilters.SHOW_COMPLETED:
-//       return todos.filter(todo => todo.completed)
-//     case VisibilityFilters.SHOW_ACTIVE:
-//       return todos.filter(todo => !todo.completed)
-//   }
-// }
-
-// Which props do we want to inject, given the global state?
-// Note: use https://github.com/faassen/reselect for better performance.
-// function select(state) {
-//   return {
-//     visibleTodos: selectTodos(state.todos, state.visibilityFilter),
-//     visibilityFilter: state.visibilityFilter
-//   }
-// }
-
-// 包装 component ，注入 dispatch 和 state 到其默认的 connect(select)(App) 中；
 export default App

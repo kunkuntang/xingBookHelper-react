@@ -1,13 +1,15 @@
 import React from 'react';
-import {
-  Link
-} from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+
+import * as actions from '../../Redux/Action'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
-import $ from 'jquery'
+// import $ from 'jquery'
 
 let floatingLabelStyle = {
   color: '#000000',
@@ -36,26 +38,28 @@ class LoginPage extends React.Component {
 
   constructor(props) {
     super(props)
+    this.getUserData = this.getUserData.bind(this)
   }
 
   getUserData (userID, bookList) {
     console.log('out', this)   
     let _this = this 
-    $.get({
-      url: 'http://localhost:8800/test',
-      // url: 'http://lenkuntang.cn:8800/test',
-      dataType: 'JSON',
-      success: function (data) {
-        console.log(data)
-        console.log('inner', this)
-        _this.props.setBookList(data)
-      }
-    })
+    // $.get({
+    //   url: 'http://localhost:8800/test',
+    //   // url: 'http://lenkuntang.cn:8800/test',
+    //   dataType: 'JSON',
+    //   success: function (data) {
+    //     console.log(data)
+    //     console.log('inner', this)
+    //     _this.props.setBookList(data)
+    //   }
+    // })
   }
 
   render() {
     return (
       <div>
+        {this.props.test}
         <MuiThemeProvider><TextField floatingLabelText="书单名：" floatingLabelStyle={floatingLabelStyle} /></MuiThemeProvider>
         <MuiThemeProvider><TextField floatingLabelText="书名：" floatingLabelStyle={floatingLabelStyle} /></MuiThemeProvider>
         <MuiThemeProvider><TextField floatingLabelText="价格：" floatingLabelStyle={floatingLabelStyle} /></MuiThemeProvider>
@@ -70,5 +74,13 @@ class LoginPage extends React.Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    //console.log('Main.js mapDispatchToProps');
+    return {
+      actions: bindActionCreators(actions, dispatch),
+    }
+}
 
-export default LoginPage;
+export default connect(
+  mapDispatchToProps
+)(LoginPage)

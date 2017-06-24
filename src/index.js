@@ -10,11 +10,11 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 // import ToDoList from './containers/App.js'
-import login from './Redux/Reducer/login'
+import reducers from './Redux/Reducer'
 // import BasicExample from './BasicExample.js'
 
 
-let store = createStore(login)
+let store = createStore(reducers)
 
 ReactDOM.render(
   <Provider store={store}>
