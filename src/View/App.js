@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // import { connect } from 'react-redux'
 
-import Login from '../login/index.js'
-import BookList from '../bookList/index.js'
-import AddBookList from '../addBookList/index.js'
+import Login from './login/index.js'
+import BookList from './bookList/index.js'
+import AddBookList from './addBookList/index.js'
 
 import {
   BrowserRouter as Router,
